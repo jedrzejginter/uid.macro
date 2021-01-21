@@ -1,5 +1,5 @@
 const { createMacro } = require("babel-plugin-macros");
-const { v4 } = require('uuid');
+const { v4 } = require("uuid");
 
 // caching fixes issue with server-side rendering
 // when file is being compiled two times
@@ -7,18 +7,18 @@ const { v4 } = require('uuid');
 // which can cause hydration issues
 const cache = {};
 
-function uuidMacro({ references, state, babel }) {
+function uuidMacro({ references, babel }) {
   const { uuid: uuidReferences = [] } = references;
   const { types: t } = babel;
 
-  uuidReferences.forEach((p) => {
-    if (t.isCallExpression(p.parent)) {
-      const key = `${p.hub.file.opts.filename}:${p.node.loc.start.line}.${p.node.loc.start.column}`;
+  uuidReferences.forEach((path) => {
+    if (t.isCallExpression(path.parent)) {
+      const key = `${path.hub.file.opts.filename}:${path.node.loc.start.line}.${path.node.loc.start.column}`;
 
       const val = cache[key] || v4();
       cache[key] = val;
 
-      p.parentPath.replaceWith(t.stringLiteral(val));
+      path.parentPath.replaceWith(t.stringLiteral(val));
     }
   });
 }

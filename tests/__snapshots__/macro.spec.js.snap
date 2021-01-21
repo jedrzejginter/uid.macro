@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`uuid.macro 1. uuid.macro: 1. uuid.macro 1`] = `
+
+import { uuid } from '../macro';
+
+const x = uuid();
+
+function Component() {
+  return <div id={uuid()} />;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = "00000000-0000-0000-0000-000000000001";
+
+function Component() {
+  return <div id={"00000000-0000-0000-0000-000000000002"} />;
+}
+
+
+`;

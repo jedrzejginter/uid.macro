@@ -1,9 +1,8 @@
 const plugin = require("babel-plugin-macros");
 const { default: pluginTester } = require("babel-plugin-tester");
 
-// We have to mock 'uuid' module, because it would
-// break snapshot every time we run tests, due to new
-// uuid being generated.
+// We have to mock 'uuid' and 'randomstring' modules, because they would
+// break snapshots every time we run tests, due to new values being generated.
 jest.mock("uuid", () => {
   let i = 0;
   const uuids = [
@@ -21,9 +20,24 @@ jest.mock("uuid", () => {
   };
 });
 
+jest.mock("randomstring", () => {
+  let i = 0;
+  const uuids = [
+    "firstrandomstring0123456789",
+    "secondrandomstring0123456789",
+  ];
+
+  return (len) => {
+    const value = uuids[i];
+    i = (i + 1) % uuids.length;
+
+    return value.slice(0, len);
+  }
+})
+
 pluginTester({
   plugin,
-  pluginName: "uuid.macro",
+  pluginName: "uid.macro",
   snapshot: true,
   babelOptions: {
     filename: __filename,
@@ -37,6 +51,15 @@ pluginTester({
 
       function Component() {
         return <div id={uuid()} />;
+      }
+    `,
+    `
+      import { str } from '../macro';
+
+      const x = str();
+
+      function Component() {
+        return <div id={str(12)} />;
       }
     `,
   ],

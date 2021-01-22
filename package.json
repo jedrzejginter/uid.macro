@@ -1,10 +1,10 @@
 {
-  "name": "uuid.macro",
-  "version": "0.0.1-rc.1",
-  "description": "babel macro that inputs uuid in compilation phase",
+  "name": "uid.macro",
+  "version": "0.1.0-rc.1",
+  "description": "babel macro that inputs unique ids in compilation phase",
   "main": "macro.js",
   "types": "macro.d.ts",
-  "repository": "git@github.com:jedrzejginter/uuid.macro.git",
+  "repository": "git@github.com:jedrzejginter/uid.macro.git",
   "author": "Jedrzej Ginter <dzeejj@gmail.com> (https://github.com/jedrzejginter)",
   "license": "MIT",
   "keywords": [
@@ -12,7 +12,11 @@
     "babel-macro",
     "macro",
     "macros",
-    "uuid"
+    "uid",
+    "uuid",
+    "uid.macro",
+    "uuid.macro",
+    "id.macro"
   ],
   "files": [
     "macro.js",
@@ -29,6 +33,7 @@
     "jest": "26.6.3"
   },
   "dependencies": {
+    "randomstring": "^1.1.0",
     "uuid": "^8.0.0"
   },
   "peerDependencies": {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`uuid.macro 1. uuid.macro: 1. uuid.macro 1`] = `
+exports[`uid.macro 1. uid.macro: 1. uid.macro 1`] = `
 
 import { uuid } from '../macro';
 
@@ -16,6 +16,27 @@ const x = "00000000-0000-0000-0000-000000000001";
 
 function Component() {
   return <div id={"00000000-0000-0000-0000-000000000002"} />;
+}
+
+
+`;
+
+exports[`uid.macro 2. uid.macro: 2. uid.macro 1`] = `
+
+import { str } from '../macro';
+
+const x = str();
+
+function Component() {
+  return <div id={str(12)} />;
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = "firstrandomstring0123456";
+
+function Component() {
+  return <div id={"secondrandom"} />;
 }
 
 

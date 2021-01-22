@@ -1,2 +1,3 @@
+declare function str(length?: number): string;
 declare function uuid(): string;
-export { uuid };
+export { str, uuid };

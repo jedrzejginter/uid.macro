@@ -22,18 +22,15 @@ jest.mock("uuid", () => {
 
 jest.mock("randomstring", () => {
   let i = 0;
-  const uuids = [
-    "firstrandomstring0123456789",
-    "secondrandomstring0123456789",
-  ];
+  const uuids = ["firstrandomstring0123456789", "secondrandomstring0123456789"];
 
   return (len) => {
     const value = uuids[i];
     i = (i + 1) % uuids.length;
 
     return value.slice(0, len);
-  }
-})
+  };
+});
 
 pluginTester({
   plugin,

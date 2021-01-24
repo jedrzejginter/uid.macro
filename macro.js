@@ -27,7 +27,7 @@ function uidMacro({ references, babel }) {
       const [arg0] = path.parent.arguments;
       const len = t.isNumericLiteral(arg0) ? arg0.value : 24;
 
-      const val = genAndCacheValue(path, 'str', () => randomstring(len));
+      const val = genAndCacheValue(path, "str", () => randomstring(len));
 
       path.parentPath.replaceWith(t.stringLiteral(val));
     }
@@ -35,7 +35,7 @@ function uidMacro({ references, babel }) {
 
   uuidReferences.forEach((path) => {
     if (t.isCallExpression(path.parent)) {
-      const val = genAndCacheValue(path, 'uuid', uuid.v4);
+      const val = genAndCacheValue(path, "uuid", uuid.v4);
       path.parentPath.replaceWith(t.stringLiteral(val));
     }
   });

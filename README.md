@@ -1,6 +1,6 @@
 # uid.macro
 
-Insert [`uuid` v4](npmjs.com/package/uuid) or [`random string`](https://www.npmjs.com/package/randomstring) at build-time with [`babel macros`](https://github.com/kentcdodds/babel-plugin-macros).
+Insert [`uuid` v4](https://www.npmjs.com/package/uuid) or [`random string`](https://www.npmjs.com/package/randomstring) at build-time with [`babel macros`](https://github.com/kentcdodds/babel-plugin-macros).
 
 ## Installation
 

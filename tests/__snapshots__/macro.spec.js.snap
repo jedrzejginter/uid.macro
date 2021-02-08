@@ -12,10 +12,10 @@ function Component() {
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const x = "00000000-0000-0000-0000-000000000001";
+const x = '00000000-0000-0000-0000-000000000001';
 
 function Component() {
-  return <div id={"00000000-0000-0000-0000-000000000002"} />;
+  return <div id={'00000000-0000-0000-0000-000000000002'} />;
 }
 
 
@@ -33,10 +33,10 @@ function Component() {
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const x = "firstrandomstring0123456";
+const x = 'firstrandomstring0123456';
 
 function Component() {
-  return <div id={"secondrandom"} />;
+  return <div id={'secondrandom'} />;
 }
 
 

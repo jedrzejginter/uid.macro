@@ -13,16 +13,18 @@ You'll also need to install and configure [`babel-plugin-macros`](https://github
 ## Usage
 
 - `uuid` version 4
+
   ```js
   import { uuid } from 'uid.macro';
   const value = uuid();
 
   ↓ ↓ ↓ ↓ ↓ ↓
 
-  const value = "00000000-0000-0000-0000-000000000001";
+  const value = '44a79dfb-6805-46c7-bd79-04420e7d6bcc';
   ```
 
 - random string (optional length)
+
   ```js
   import { str } from 'uid.macro';
   const value = str();
@@ -30,6 +32,6 @@ You'll also need to install and configure [`babel-plugin-macros`](https://github
 
   ↓ ↓ ↓ ↓ ↓ ↓
 
-  const value = "XwPp9xazJ0ku5CZnlmgAx2Dld8SHkAeT";
-  const other = "xqm5wXX";
+  const value = 'XwPp9xazJ0ku5CZnlmgAx2Dld8SHkAeT';
+  const other = 'xqm5wXX';
   ```

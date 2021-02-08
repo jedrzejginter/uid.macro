@@ -1,6 +1,6 @@
 {
   "name": "uid.macro",
-  "version": "0.1.0-rc.1",
+  "version": "0.1.0",
   "description": "babel macro that inputs unique ids in compilation phase",
   "license": "MIT",
   "repository": "git@github.com:jedrzejginter/uid.macro.git",
